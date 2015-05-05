@@ -1,0 +1,1 @@
+cmake.vmb: call delete('/Users/zhuxiaomeng/.vim/after/syntax/cmake.vim')

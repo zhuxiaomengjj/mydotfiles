@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/zhuxiaomeng/Documents/dev/cocos2d-x-3.2rc0/build/cocos2d_tests.xcodeproj'
+let g:netrw_dirhist_2='/Users/zhuxiaomeng/Documents/dev/cocos2d-x-3.2rc0/build/cocos2d_libs.xcodeproj'
+let g:netrw_dirhist_3='/Users/zhuxiaomeng/Documents/dev/cocos2d-x-3.2rc0/build/cocos2d_libs.zip/project.xcworkspace'
