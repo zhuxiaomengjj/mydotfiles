@@ -43,11 +43,14 @@ Plugin 'tfnico/vim-gradle'
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
 "......................................
-filetype plugin indent on
+Plugin 'scrooloose/nerdtree'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""setting of nerdtree
-Plugin 'scrooloose/nerdtree'
+
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=31
 let NERDTreeChDirMode=1
@@ -60,8 +63,9 @@ map f5 :tabp<CR>
 "F6 后一个tab标签
 map f6 :tabn<CR>
 
-
-set backupdir=~/tmp
+set nobackup
+set noswapfile
+"set backupdir=~/tmp
 winpos 200 50
 set lines=40 columns=108
 colors lucius 
