@@ -13,40 +13,50 @@ Bundle 'gmarik/Vundle.vim'
 "my Bundle here:
 "
 " original repos on github
-Bundle 'kien/ctrlp.vim'
-Bundle 'sukima/xmledit'
-Bundle 'sjl/gundo.vim'
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+" Bundle 'kien/ctrlp.vim'
+"Bundle 'sukima/xmledit'
+"Graph your Vim undo tree in style
+"Bundle 'sjl/gundo.vim'
 "Bundle 'jiangmiao/auto-pairs'
+"The plugin contains all you need to develop python applications in Vim
 Plugin 'klen/python-mode'
-Plugin 'Valloric/ListToggle'
+"A simple vim plugin for toggling the display of the quickfix list and the location-list.
+"Plugin 'Valloric/ListToggle'
 Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
-Plugin 't9md/vim-quickhl'
+"Plugin 'scrooloose/syntastic'
+"Highlight on the fly
+"Plugin 't9md/vim-quickhl'
 " Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
+"A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
 Plugin 'elzr/vim-json'
+" glsl hilighter
 Plugin 'tikhomirov/vim-glsl'
 "..................................
 " vim-scripts repos
-Plugin 'YankRing.vim'
-Plugin 'vcscommand.vim'
-Plugin 'ShowPairs'
-Plugin 'SudoEdit.vim'
-Plugin 'EasyGrep'
-Plugin 'VOoM'
-Plugin 'VimIM'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'YankRing.vim'
+"Plugin 'vcscommand.vim'
+"Plugin 'ShowPairs'
+"Plugin 'SudoEdit.vim'
+"Plugin 'EasyGrep'
+"Plugin 'VOoM'
+"Plugin 'VimIM'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+" markdown render to browser on synchronously
 Plugin 'suan/vim-instant-markdown'
+" gradle file syntax highlighting
 Plugin 'tfnico/vim-gradle'
 "..................................
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
 "......................................
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""setting of nerdtree
@@ -67,6 +77,22 @@ map f6 :tabn<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_config.py' "where to search for .ycm_extra_conf.py if not found
 let g:ycm_confirm_extra_conf = 1 
 
+" setting ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" setting vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set nobackup
 set noswapfile
 "set backupdir=~/tmp
@@ -85,14 +111,14 @@ set smartindent                 " 智能自动缩进
 set ai                          " 设置自动缩进
 set nu                          " 显示行号
 set guifont=Monaco:h13          " 设置字体
-set showmatch                   " 显示括号配对情况
+"set showmatch                   " 显示括号配对情况
 set hlsearch                    " 开启高亮显示结果
 set incsearch                   " 开启实时搜索功能
 set nowrapscan                  " 搜索到文件两端时不重新搜索
 set hidden                      " 允许在有未保存的修改时切换缓冲区
 set nobackup                    " 设置无备份文件
 set nocompatible                " 不使用vi兼容的模式
-"set clipboard=unnamed          " 使用系统的复制粘贴
+set clipboard=unnamed          " 使用系统的复制粘贴
 if has('unnamedplus')
   set clipboard=unnamedplus     " Linux
 else
