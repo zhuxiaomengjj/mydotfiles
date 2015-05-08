@@ -63,6 +63,10 @@ map f5 :tabp<CR>
 "F6 后一个tab标签
 map f6 :tabn<CR>
 
+" settings of YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_config.py' "where to search for .ycm_extra_conf.py if not found
+let g:ycm_confirm_extra_conf = 1 
+
 set nobackup
 set noswapfile
 "set backupdir=~/tmp

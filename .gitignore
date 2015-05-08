@@ -1,1 +1,3 @@
 .vim/bundle/
+*.ropeproject/
+.vim/.ycm_extra_config.pyc
