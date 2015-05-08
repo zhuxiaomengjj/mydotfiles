@@ -13,6 +13,7 @@ Bundle 'gmarik/Vundle.vim'
 "my Bundle here:
 "
 " original repos on github
+
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " Bundle 'kien/ctrlp.vim'
 "Bundle 'sukima/xmledit'
@@ -20,13 +21,12 @@ Bundle 'gmarik/Vundle.vim'
 "Bundle 'sjl/gundo.vim'
 "Bundle 'jiangmiao/auto-pairs'
 "The plugin contains all you need to develop python applications in Vim
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 "A simple vim plugin for toggling the display of the quickfix list and the location-list.
 "Plugin 'Valloric/ListToggle'
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic'
 "Highlight on the fly
@@ -77,21 +77,28 @@ map f6 :tabn<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_config.py' "where to search for .ycm_extra_conf.py if not found
 let g:ycm_confirm_extra_conf = 1 
 
-" setting ultisnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " setting vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" this mapping Enter key to <C-y> to chose the current highlight item
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 set nobackup
 set noswapfile
@@ -140,4 +147,5 @@ autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! ~/.vim/bundle/cmake/indent/cmake-indent.vim
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
-:au BufRead,BufNewFile *.md		set filetype=markdown
+:au BufRead,BufNewFile *.md set filetype=markdown
+
