@@ -21,7 +21,7 @@ Bundle 'gmarik/Vundle.vim'
 "Bundle 'sjl/gundo.vim'
 "Bundle 'jiangmiao/auto-pairs'
 "The plugin contains all you need to develop python applications in Vim
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 "A simple vim plugin for toggling the display of the quickfix list and the location-list.
 "Plugin 'Valloric/ListToggle'
 Plugin 'SirVer/ultisnips'
@@ -51,9 +51,15 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'suan/vim-instant-markdown'
 " gradle file syntax highlighting
 Plugin 'tfnico/vim-gradle'
+Plugin 'vim-scripts/Conque-GDB'
+let g:ConqueGdb_GdbExe = $GDB
 "..................................
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+"Plugin 'file:///Users/zhuxiaomeng/.vim/local_plugins/helloworld'
+"Plugin 'file:///Users/zhuxiaomeng/.vim/local_plugins/vimdbg'
 "......................................
 "Plugin 'scrooloose/nerdtree'
 " All of your Plugins must be added before the following line
