@@ -51,8 +51,9 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'suan/vim-instant-markdown'
 " gradle file syntax highlighting
 Plugin 'tfnico/vim-gradle'
-Plugin 'vim-scripts/Conque-GDB'
-let g:ConqueGdb_GdbExe = $GDB
+Plugin 'kelan/gyp.vim'
+"Plugin 'vim-scripts/Conque-GDB'
+"let g:ConqueGdb_GdbExe = $GDB
 "..................................
 " non github repos
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -91,9 +92,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<tab>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<s-tab>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
